@@ -1,4 +1,4 @@
-/* Reset and base styling */
+/* Base Styling */
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
     margin: 0;
@@ -8,11 +8,11 @@ body {
     line-height: 1.6;
   }
   
-  /* Header styling */
+  /* Header */
   header {
     background: linear-gradient(to right, #1f1f1f, #2c3e50);
     color: #fff;
-    padding: 30px 0;
+    padding: 30px 15px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -24,11 +24,11 @@ body {
   }
   
   header nav {
-    margin-top: 10px;
+    margin-top: 15px;
   }
   
   header nav a {
-    margin: 0 15px;
+    margin: 0 12px;
     text-decoration: none;
     color: #c0c0c0;
     font-weight: 500;
@@ -39,14 +39,14 @@ body {
     color: #00adb5;
   }
   
-  /* Main content area */
+  /* Content */
   main {
     max-width: 960px;
     margin: 40px auto;
     padding: 0 20px;
   }
   
-  /* Profile picture (for index page if used) */
+  /* Profile Picture */
   .profile-pic {
     width: 160px;
     height: 160px;
@@ -73,7 +73,7 @@ body {
     color: #3e5871;
   }
   
-  /* List Styling */
+  /* List and Timeline */
   ul {
     padding-left: 20px;
   }
@@ -82,7 +82,6 @@ body {
     margin-bottom: 8px;
   }
   
-  /* Timeline items */
   ul.timeline {
     list-style-type: none;
     padding-left: 0;
@@ -97,7 +96,7 @@ body {
     border-radius: 4px;
   }
   
-  /* Footer (if needed) */
+  /* Footer (if used) */
   footer {
     text-align: center;
     padding: 20px;
@@ -105,5 +104,41 @@ body {
     font-size: 0.9em;
     background-color: #eeeeee;
     margin-top: 40px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 1.6em;
+    }
+  
+    header nav a {
+      display: inline-block;
+      margin: 8px 10px;
+      font-size: 0.95em;
+    }
+  
+    main {
+      padding: 0 15px;
+    }
+  
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      margin-top: 15px;
+    }
+  
+    h2 {
+      font-size: 1.4em;
+    }
+  
+    h3 {
+      font-size: 1.1em;
+    }
+  
+    ul.timeline li {
+      padding: 12px 15px;
+      font-size: 0.95em;
+    }
   }
   
