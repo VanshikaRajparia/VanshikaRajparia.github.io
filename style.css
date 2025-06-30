@@ -3,9 +3,51 @@ body {
     font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+    padding-top: 60px; /* Add space for fixed nav */
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
+  }
+  
+  /* Fixed Navigation Bar */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, #1f1f1f, #2c3e50);
+    padding: 12px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+  }
+  
+  .main-nav nav {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 0;
+  }
+  
+  .main-nav nav a {
+    text-decoration: none;
+    color: #c0c0c0;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin: 0 3px;
+  }
+  
+  .main-nav nav a:hover {
+    color: #fff;
+    background-color: rgba(0, 173, 181, 0.3);
+    transform: translateY(-1px);
+  }
+  
+  .main-nav nav a.active {
+    background-color: #00adb5;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 173, 181, 0.3);
   }
   
   /* Header */
@@ -23,24 +65,9 @@ body {
     letter-spacing: 0.5px;
   }
   
+  /* Remove old nav styling since we'll use fixed nav */
   header nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 10px;
-    gap: 12px;
-  }
-  
-  header nav a {
-    text-decoration: none;
-    color: #c0c0c0;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    padding: 6px 12px;
-  }
-  
-  header nav a:hover {
-    color: #00adb5;
+    display: none;
   }
   
   /* Main Content */
@@ -121,17 +148,32 @@ body {
   
   /* Responsive Design */
   @media (max-width: 768px) {
+    body {
+      padding-top: 70px; /* Increase space for mobile nav */
+    }
+
+    .main-nav {
+      padding: 8px 0;
+    }
+
+    .main-nav nav {
+      flex-wrap: wrap;
+      gap: 5px;
+      padding: 0 10px;
+    }
+
+    .main-nav nav a {
+      padding: 8px 12px;
+      font-size: 0.9em;
+      margin: 2px;
+    }
+
     header {
       padding: 15px 10px;
     }
   
     header h1 {
       font-size: 1.5em;
-    }
-  
-    header nav a {
-      font-size: 0.9em;
-      padding: 5px 10px;
     }
   
     .profile-pic {
@@ -159,6 +201,26 @@ body {
   
     iframe {
       height: 400px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      padding-top: 80px; /* More space for smaller screens */
+    }
+
+    .main-nav nav a {
+      padding: 6px 8px;
+      font-size: 0.8em;
+    }
+
+    header h1 {
+      font-size: 1.3em;
+    }
+
+    .profile-pic {
+      width: 80px;
+      height: 80px;
     }
   }
   
